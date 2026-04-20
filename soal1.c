@@ -31,8 +31,19 @@ int main() {
                 }
             }
 
-            if (left != -1 && right != -1)
-                a[i] = (left + right) / 2;
+            if (left != -1 && right != -1) {
+                int sum = left + right;
+                a[i] = sum / 2;
+                if (sum < 0 && sum % 2 != 0) {
+                    a[i]--;
+                }
+            }
+
+                // if (a[i] % 2 == 0 || a[1] % 2 == 0) a[i] = a[i];
+                // Jika hasil kurang dari 0 misalnya -3.5 maka menjadi -4 bukan -3 karena pembulatan ke bawah
+                
+
+
             else if (left != -1)
                 a[i] = left;
             else if (right != -1)
